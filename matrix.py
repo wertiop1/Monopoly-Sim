@@ -1,0 +1,49 @@
+import numpy as np
+tiles = ["Go", "Mediterranean", "Community", "Baltic", "IncomeTax", "ReadingRail",
+          "Oriental", "Chance", "Vermont", "Connecticut", "Visiting",
+            "Charles", "Electric", "States", "Virginia", "PennRail",
+            "James", "Community", "Tennessee", "NY", "FreePark", 
+            "Kentucky", "Chance", "Indiana", "Illinois", "B&ORail", 
+            "Atlantic", "Ventnor", "Water", "Marvin", "GOTOJAIL", 
+            "Pacific", "NorthCarolina", "Community", "PennAve", "ShortLine", 
+            "Chance", "ParkPlace", "LuxuryTax", "Boardwalk",
+            "Jail1", "Jail2"]
+chanceCards = ["Go", "Illinois", "Charles", "Utiliy", "Railroad", "Back3", "Jail", "Reading", "Boardwalk"]
+communityCards = ["Go","Jail"]
+#16 of each card
+prob = {2: 0.0, 3: 0.05555555555555555, 4: 0.05555555555555555, 5: 0.1111111111111111, 6: 0.1111111111111111, 7: 0.16666666666666666, 8: 0.1111111111111111, 9: 0.1111111111111111, 10: 0.05555555555555555, 11: 0.05555555555555555, 12: 0.0}
+doubleProb = {2: 0.027777777777777776, 4: 0.027777777777777776, 6: 0.027777777777777776, 8: 0.027777777777777776, 10: 0.027777777777777776, 12: 0.027777777777777776}
+stochasticMatrix = np.zeros((len(tiles), len(tiles)))
+for i in range(40):
+    for key in prob:
+        if(tiles[(i+key)%40] == "Chance"):
+            stochasticMatrix[i][0] += prob[key]/9
+            stochasticMatrix[i][24] += prob[key]/9
+            stochasticMatrix[i][11] += prob[key]/9
+            stochasticMatrix[i][40] += prob[key]/9
+            stochasticMatrix[i][5] += prob[key]/9
+            stochasticMatrix[i][39] += prob[key]/9
+            stochasticMatrix[i][(i+key-3)%40] += prob[key]/9
+            j = 0
+            while(tiles[(i+key+j)%40] != "Electric" and tiles[(i+key+j)%40] != "Water"):
+                j += 1
+            stochasticMatrix[(i+key+j)%40] += prob[key]/9
+            j = 0
+            while(tiles[(i+key+j)%40] != "ReadingRail" and tiles[(i+key+j)%40] != "PennRail" and tiles[(i+key+j)%40] != "B&ORail" and tiles[(i+key+j)%40] != "ShortLine"):
+                j += 1
+            stochasticMatrix[(i+key+j)%40] += prob[key]/9
+        elif(tiles[(i+key)%40] == "Community"):
+            stochasticMatrix[i][0] += prob[key]/2
+            stochasticMatrix[i][40] += prob[key]/2
+        elif((i+key) == 30):
+            stochasticMatrix[i][40] += prob[key]
+        else:
+            stochasticMatrix[i][(i+key)%40] += prob[key]
+stochasticMatrix[40][41] = 1
+stochasticMatrix[41][10] = 1
+with open("stochasticMatrix.txt", "w") as f:
+    for i in stochasticMatrix:
+        f.write("| ")
+        for j in i:
+            f.write(str(j) + " ")
+        f.write("|\n")

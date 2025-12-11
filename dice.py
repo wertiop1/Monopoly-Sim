@@ -31,7 +31,15 @@ for key in Prob:
     if key % 2 == 0:
         Prob[key] -= 1
         doubleProb[key] += 1
+for key in Prob:
+    Prob[key]/=36
+for key in doubleProb:
+    doubleProb[key]/=36
 print("Prob: ", end="")
 print(Prob)
 print("Double Prob: ", end="")
 print(doubleProb)
+#print("doubleProb = [",end="")
+#for i in range(2,2*len(doubleProb)+2,2):
+#    print(doubleProb[i],end=", ")
+#print("]")
