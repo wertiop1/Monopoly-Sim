@@ -24,7 +24,12 @@ for i in range(40):
             stochasticMatrix[i,40] += prob[key]/nCards
             stochasticMatrix[i,5] += prob[key]/nCards
             stochasticMatrix[i,39] += prob[key]/nCards
-            stochasticMatrix[i,(i+key-3)%40] += prob[key]/nCards
+            if((i+key%40)!= 33):    
+                stochasticMatrix[i,(i+key-3)%40] += prob[key]/nCards
+            else:
+                stochasticMatrix[i,0] += prob[key]/nCards/nCards
+                stochasticMatrix[i,40] += prob[key]/nCards/nCards
+                stochasticMatrix[i,(i+key)%40] = prob[key]*(nCards-len(communityCards))/nCards/nCards
             j = 0
             while(tiles[(i+key+j)%40] != "Electric" and tiles[(i+key+j)%40] != "Water"):
                 j += 1
@@ -45,7 +50,7 @@ for i in range(40):
 stochasticMatrix[40,41] = 1
 stochasticMatrix[41,10] = 1
 finalMatrix = stochasticMatrix.copy()
-finalMatrix[:40,41]= 1/6 
+finalMatrix[:40,40] += 1/6 
 doubleMatrix = stochasticMatrix.copy()
 for i in range(40):
     for key in doubleProb:
@@ -53,28 +58,14 @@ for i in range(40):
 for i in range(40):
     for key in doubleProb:
         stochasticMatrix[i] += doubleMatrix[(i+key)%40]*doubleProb[key]
-for i in range(42):
-    print(np.sum(stochasticMatrix[i]))
+#for i in range(42):
+#    print(np.sum(stochasticMatrix[i]))
 finalMatrix = finalMatrix.T
 stochasticMatrix = stochasticMatrix.T
+doubleMatrix = doubleMatrix.T
+np.savetxt("finalMatrix.csv", finalMatrix, delimiter=",")
+np.savetxt("doubleMatrix.csv", doubleMatrix, delimiter=",")
+np.savetxt("stochasticMatrix.csv", stochasticMatrix, delimiter=",")
 
-with open("doubleMatrix.txt", "w") as f:
-    for i in doubleMatrix:
-        f.write("| ")
-        for j in i:
-            f.write((str(j) + " "))
-        f.write("|\n")
-
-with open("stochasticMatrix.txt", "w") as f:
-    for i in stochasticMatrix:
-        f.write("| ")
-        for j in i:
-            f.write(str(j) + " ")
-        f.write("|\n")
-
-with open("finalMatrix.txt", "w") as f:
-    for i in finalMatrix:
-        f.write("| ")
-        for j in i:
-            f.write(str(j) + " ")
-        f.write("|\n")
+eigenvalues, eigenvectors = np.linalg.eig(stochasticMatrix)
+print(eigenvectors[:,0])
