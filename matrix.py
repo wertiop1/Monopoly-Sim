@@ -41,6 +41,11 @@ for i in range(40):
             stochasticMatrix[i][(i+key)%40] += prob[key]
 stochasticMatrix[40][41] = 1
 stochasticMatrix[41][10] = 1
+stochasticMatrix = stochasticMatrix.T
+for i in range(42):
+    test = np.sum(stochasticMatrix[:][i]) 
+    if(test < 0.99 or test > 1.01):
+        print(test)
 with open("stochasticMatrix.txt", "w") as f:
     for i in stochasticMatrix:
         f.write("| ")
