@@ -58,14 +58,14 @@ for i in range(40):
 for i in range(40):
     for key in doubleProb:
         stochasticMatrix[i] += doubleMatrix[(i+key)%40]*doubleProb[key]
-#for i in range(42):
-#    print(np.sum(stochasticMatrix[i]))
+        
 finalMatrix = finalMatrix.T
 stochasticMatrix = stochasticMatrix.T
 doubleMatrix = doubleMatrix.T
-np.savetxt("finalMatrix.csv", finalMatrix, delimiter=",")
-np.savetxt("doubleMatrix.csv", doubleMatrix, delimiter=",")
-np.savetxt("stochasticMatrix.csv", stochasticMatrix, delimiter=",")
+
+#np.savetxt("finalMatrix.csv", finalMatrix, delimiter=",")
+#np.savetxt("doubleMatrix.csv", doubleMatrix, delimiter=",")
+#np.savetxt("stochasticMatrix.csv", stochasticMatrix, delimiter=",")
 
 eigenvalues, eigenvectors = np.linalg.eig(stochasticMatrix)
 print(eigenvectors[:,0])
