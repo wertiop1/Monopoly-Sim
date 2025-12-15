@@ -1,6 +1,12 @@
-.board {
+body {
+    background-color: aqua;
+}
+#board {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+#a1 {
+    width: 1px;
 }
