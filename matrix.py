@@ -47,7 +47,8 @@ for i in range(40):
             stochasticMatrix[i,40] += prob[key]
         else:
             stochasticMatrix[i,(i+key)%40] += prob[key]
-stochasticMatrix[40,41] = 1
+stochasticMatrix[40,41] = 5/6
+stochasticMatrix[40,10] = 1/6
 stochasticMatrix[41,10] = 1
 finalMatrix = stochasticMatrix.copy()
 finalMatrix[:40,40] += 1/6 
