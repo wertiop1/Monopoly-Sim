@@ -1,49 +1,52 @@
 <html>
     <head>
         <title>Monopoly Sim</title>
-        <link rel="stylesheets" type="text/css" href="{{url_for('static', filename='style/style.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style/style.css')}}"/>
     </head>
     <body>
-        <img src="{{url_for('static', filename='board.jpg')}}" id="board" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a1" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a2" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a3" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a4" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a5" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a6" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a7" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a8" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a9" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a10" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a11" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a12" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a13" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a14" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a15" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a16" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a17" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a18" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a19" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a20" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a21" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a22" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a23" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a24" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a25" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a26" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a27" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a28" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a29" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a30" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a31" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a32" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a33" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a34" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a35" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a36" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a37" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a38" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a39" />
-        <img src="{{url_for('static', filename='player.png')}}", id="a40" />
+        <div class="containerBox">
+            <img src="{{url_for('static', filename='board.jpg')}}" id="board" />
+            <img src="{{url_for('static', filename='player.png')}}" id="a1" class="corner" />
+            <img src="{{url_for('static', filename='player.png')}}" id="a2" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a3" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a4" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a5" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a6" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a7" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a8" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a9" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a10" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a11" class="corner"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a12" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a13" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a14" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a15" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a16" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a17" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a18" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a19" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a20" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a21" class="corner"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a22" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a23" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a24" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a25" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a26" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a27" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a28" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a29" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a30" class="bottom"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a31" class="corner"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a32" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a33" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a34" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a35" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a36" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a37" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a38" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a39" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a40" class="side"/>
+            <img src="{{url_for('static', filename='player.png')}}" id="a40" class="jail"/>  
+        </div>
     </body>
 </html>

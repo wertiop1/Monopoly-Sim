@@ -1,12 +1,120 @@
-body {
-    background-color: aqua;
+.containerBox {
+    position: relative;
 }
-#board {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+.corner {
+    width: 118px;
+    height: 118px;
+}
+.bottom {
+    width: 70px;
+    height: 118px;
+}
+.side {
+    width: 118px;
+    height: 70px;
 }
 #a1 {
-    width: 1px;
+    top: 778px;
+    left: 778px;
+    position: absolute;
+}
+#a2 {
+    top: 778px;
+    left: 705px;
+    position: absolute;
+}
+#a3 {
+    top: 778;
+    left: 632;
+    position: absolute;
+}
+#a4 {
+    top: 778;
+    left: 559;
+    position: absolute;
+}
+#a5 {
+    top: 778;
+    left: 486;
+    position: absolute;
+}
+#a6 {
+    top: 778;
+    left: 413;
+    position: absolute;
+}
+#a7 {
+    top: 778;
+    left: 340;
+    position: absolute;
+}
+#a8 {
+    top: 778;
+    left: 267;
+    position: absolute;
+}
+#a9 {
+    top: 778;
+    left: 194;
+    position: absolute;
+}
+#a10 {
+    top: 778;
+    left: 121;
+    position: absolute;
+}
+#a11 {
+    top:778;
+    left: 0;
+    position:absolute;
+}
+#a12 {
+    top:705;
+    left: 0;
+    position:absolute;
+}
+#a13 {
+    top:632;
+    left: 0;
+    position:absolute;
+}
+#a14 {
+    top:559;
+    left: 0;
+    position:absolute;
+}
+#a15 {
+    top:486;
+    left: 0;
+    position:absolute;
+}
+#a16 {
+    top:413;
+    left: 0;
+    position:absolute;
+}
+#a17 {
+    top:340;
+    left: 0;
+    position:absolute;
+}
+#a18 {
+    top:267;
+    left: 0;
+    position:absolute;
+}
+#a19 {
+    top:194;
+    left: 0;
+    position:absolute;
+}
+#a20 {
+    top:121;
+    left: 0;
+    position:absolute;
+}
+#a21 {
+    top: 0;
+    left: 0;
+    position:absolute;
 }
