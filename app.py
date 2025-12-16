@@ -49,15 +49,11 @@ Opacity = {
     'a40': 1,
     'a41': 1,
 }
-def reset():
-    pass
-
-def opacityById(ID, opacity):
-    pass
 
 @app.route("/")
 def monopolysim():
     return render_template("index.html")
+
 
 if __name__ == "__main__":
     app.run()
