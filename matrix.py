@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 tiles = ["Go", "Mediterranean", "Community", "Baltic", "IncomeTax", 
          "ReadingRail", "Oriental", "Chance", "Vermont", "Connecticut", 
          "Visiting", "Charles", "Electric", "States", "Virginia", 
@@ -90,3 +91,7 @@ if __name__=="__main__":
     np.savetxt("finalMatrix.csv", finalMatrix, delimiter=",")
     np.savetxt("doubleMatrix.csv", doubleMatrix, delimiter=",")
     np.savetxt("stochasticMatrix.csv", stochasticMatrix, delimiter=",")
+    plt.imshow(eigenvectors[:,0].real.reshape(-1,1), interpolation="nearest")
+    plt.colorbar(label="Value")
+    plt.title("Stochastic Matrix Heatmap")
+    plt.savefig("Stochastic_Matrix_Heatmap.png")
