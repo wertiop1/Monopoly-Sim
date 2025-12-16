@@ -7,7 +7,7 @@ tiles = ["Go", "Mediterranean", "Community", "Baltic", "IncomeTax",
          "B&ORail", "Atlantic", "Ventnor", "Water", "Marvin", 
          "GOTOJAIL", "Pacific", "NorthCarolina", "Community", "PennAve", 
          "ShortLine", "Chance", "ParkPlace", "LuxuryTax", "Boardwalk",
-            "Jail1", "Jail2"]
+            "Jail1", "Jail2", "Jail3"]
 chanceCards = ["Go", "Illinois", "Charles", "Utiliy", "Railroad", "Back3", "Jail", "Reading", "Boardwalk"]
 communityCards = ["Go","Jail"]
 #16 of each card
@@ -48,8 +48,28 @@ for i in range(40):
         else:
             stochasticMatrix[i,(i+key)%40] += prob[key]
 stochasticMatrix[40,41] = 5/6
-stochasticMatrix[40,10] = 1/6
-stochasticMatrix[41,10] = 1
+stochasticMatrix[41,42] = 5/6
+stochasticMatrix[42,10] = 5/6
+for i in range(40,43):
+    for key in doubleProb:
+        if(key != 12):
+            stochasticMatrix[i,10+key] = 1/36
+        else:
+            stochasticMatrix[i,0] += 1/(36*nCards)
+            stochasticMatrix[i,24] += 1/(36*nCards)
+            stochasticMatrix[i,11] += 1/(36*nCards)
+            stochasticMatrix[i,40] += 1/(36*nCards)
+            stochasticMatrix[i,5] += 1/(36*nCards)
+            stochasticMatrix[i,39] += 1/(36*nCards)
+            stochasticMatrix[i,(i+key-3)%40] += 1/(36*nCards)
+            while(tiles[(10+key+j)%40] != "Electric" and tiles[(10+key+j)%40] != "Water"):
+                j += 1
+            stochasticMatrix[i,(10+key+j)%40] += 1/(36*nCards)
+            j = 0
+            while(tiles[(10+key+j)%40] != "ReadingRail" and tiles[(10+key+j)%40] != "PennRail" and tiles[(10+key+j)%40] != "B&ORail" and tiles[(10+key+j)%40] != "ShortLine"):
+                j += 1
+            stochasticMatrix[i,(10+key+j)%40] += 1/(36*nCards)
+            stochasticMatrix[i,(10+key)%40] += (nCards-len(chanceCards))/nCards * 1/36
 finalMatrix = stochasticMatrix.copy()
 finalMatrix[:40,40] += 1/6 
 doubleMatrix = stochasticMatrix.copy()
@@ -64,9 +84,9 @@ finalMatrix = finalMatrix.T
 stochasticMatrix = stochasticMatrix.T
 doubleMatrix = doubleMatrix.T
 
-#np.savetxt("finalMatrix.csv", finalMatrix, delimiter=",")
-#np.savetxt("doubleMatrix.csv", doubleMatrix, delimiter=",")
-#np.savetxt("stochasticMatrix.csv", stochasticMatrix, delimiter=",")
-
 eigenvalues, eigenvectors = np.linalg.eig(stochasticMatrix)
-print(eigenvectors[:,0])
+if __name__=="__main__":
+    print(eigenvectors[:,0])
+    np.savetxt("finalMatrix.csv", finalMatrix, delimiter=",")
+    np.savetxt("doubleMatrix.csv", doubleMatrix, delimiter=",")
+    np.savetxt("stochasticMatrix.csv", stochasticMatrix, delimiter=",")

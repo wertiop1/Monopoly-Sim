@@ -1,12 +1,74 @@
 body {
     background-color: aqua;
 }
-#board {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+.image-container {
+    position: relative; /* Essential for positioning the overlay correctly within the image */
+    display: inline-block; /* Keeps container size to image size */
 }
-#a1 {
-    width: 1px;
+#a0{
+    position: absolute; 
+    top: 86.767%;
+    left: 65.1%;
+    width: 10%;
+    aspect-ratio: 1/1;
+    background-color: rgba(0,0,0,0.5);
+}
+#a31{
+    position: absolute; 
+    top: 13.33%;
+    left: 65.1%;
+    width: 10%;
+    aspect-ratio: 1/0.6;
+    background-color: rgba(0,0,0,0.5);
+}
+#a32{
+    position: absolute; 
+    top: 19.33%;
+    left: 65.1%;
+    width: 10%;
+    aspect-ratio: 1/0.6;
+    background-color: rgba(0,0,0,0.5);
+}
+#a33{
+    position: absolute; 
+    top: 25.33%;
+    left: 65.1%;
+    width: 10%;
+    aspect-ratio: 1/0.6;
+    background-color: rgba(0,0,0,0.5);
+}
+#a34{
+    position: absolute; 
+    top: 31.33%;
+    left: 65.1%;
+    width: 10%;
+    aspect-ratio: 1/0.6;
+    background-color: rgba(0,0,0,0.5);
+}
+#a35{
+    position: absolute; 
+    top: 37.33%;
+    left: 65.1%;
+    width: 10%;
+    aspect-ratio: 1/0.6;
+    background-color: rgba(0,0,0,0.5);
+}
+#a36{
+    position: absolute; 
+    top: 43.33%;
+    left: 65.1%;
+    width: 10%;
+    aspect-ratio: 1/0.6;
+    background-color: rgba(0,0,0,0.5);
+}
+#a20{
+    position: absolute; 
+    top: 0%;
+    left: 0%;
+    width: 10%;
+    aspect-ratio: 1/1;
+    background-color: rgba(0,0,0,0.5);
+}
+#board {
+    width: 75%;
 }
