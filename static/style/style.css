@@ -1,5 +1,20 @@
+body {
+    background-color: grey;
+}
+img {
+    border-radius: 25px;
+}
+#overlay {
+    pointer-events: none;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
 .containerBox {
     position: relative;
+    margin-inline: auto;
+    max-width: fit-content;
 }
 .corner {
     width: 118px;
@@ -7,11 +22,15 @@
 }
 .bottom {
     width: 70px;
-    height: 118px;
+    height: 90px;
 }
 .side {
-    width: 118px;
+    width: 90px;
     height: 70px;
+}
+.jail {
+    width: 80;
+    height: 80;
 }
 #a1 {
     top: 778px;
@@ -19,53 +38,54 @@
     position: absolute;
 }
 #a2 {
-    top: 778px;
+    top: 805px;
     left: 705px;
     position: absolute;
 }
 #a3 {
-    top: 778;
+    top: 805;
     left: 632;
     position: absolute;
 }
 #a4 {
-    top: 778;
+    top: 805;
     left: 559;
     position: absolute;
 }
 #a5 {
-    top: 778;
+    top: 805;
     left: 486;
     position: absolute;
 }
 #a6 {
-    top: 778;
+    top: 805;
     left: 413;
     position: absolute;
 }
 #a7 {
-    top: 778;
+    top: 805;
     left: 340;
     position: absolute;
 }
 #a8 {
-    top: 778;
+    top: 805;
     left: 267;
     position: absolute;
 }
 #a9 {
-    top: 778;
+    top: 805;
     left: 194;
     position: absolute;
 }
 #a10 {
-    top: 778;
+    top: 805;
     left: 121;
     position: absolute;
 }
 #a11 {
     top:778;
     left: 0;
+    clip-path: polygon(0 0, 30% 0, 30% 70%, 100% 70%, 100% 100%, 0 100%);
     position:absolute;
 }
 #a12 {
@@ -116,5 +136,105 @@
 #a21 {
     top: 0;
     left: 0;
+    position:absolute;
+}
+#a22 {
+    top: 0;
+    left: 121;
+    position:absolute;
+}
+#a23 {
+    top: 0;
+    left: 194;
+    position:absolute;
+}
+#a24 {
+    top: 0;
+    left: 267;
+    position:absolute;
+}
+#a25 {
+    top: 0;
+    left: 340;
+    position:absolute;
+}
+#a26 {
+    top: 0;
+    left: 413;
+    position:absolute;
+}
+#a27 {
+    top: 0;
+    left: 486;
+    position:absolute;
+}
+#a28 {
+    top: 0;
+    left: 559;
+    position:absolute;
+}
+#a29 {
+    top: 0;
+    left: 632;
+    position:absolute;
+}
+#a30 {
+    top: 0;
+    left: 705;
+    position:absolute;
+}
+#a31 {
+    top: 0;
+    left: 778;
+    position:absolute;
+}
+#a32 {
+    top: 121;
+    left: 805;
+    position:absolute;
+}
+#a33 {
+    top: 194;
+    left: 805;
+    position:absolute;
+}
+#a34 {
+    top: 267;
+    left: 805;
+    position:absolute;
+}
+#a35 {
+    top: 340;
+    left: 805;
+    position:absolute;
+}
+#a36 {
+    top: 413;
+    left: 805;
+    position:absolute;
+}
+#a37 {
+    top: 486;
+    left: 805;
+    position:absolute;
+}
+#a38 {
+    top: 559;
+    left: 805;
+    position:absolute;
+}
+#a39 {
+    top: 632;
+    left: 805;
+    position:absolute;
+}
+#a40 {
+    top: 705;
+    left: 805;
+    position:absolute;
+}
+#a41 {
+    top:779;
+    left: 36;
     position:absolute;
 }
