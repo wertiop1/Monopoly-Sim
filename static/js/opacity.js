@@ -16,7 +16,7 @@ function updateBoard(id){
     for(let i = 0; i < 41; i++){
         opacities[keys[i]] = column[i];
     }
-    for(let i = 0; i < 41; i++){
+    for(let i = 0; i < 42; i++){
         let image = document.getElementById(keys[i]);
         if (i === 41) {
             image.style.opacity = (steadyVector[41]+steadyVector[42]).toString();
@@ -28,7 +28,7 @@ function updateBoard(id){
 }
 
 function showSteadyState(){
-    for(let i = 0; i < 41; i++){
+    for(let i = 0; i < 42; i++){
         let image = document.getElementById(keys[i]);
         if (i === 41) {
             image.style.opacity = (steadyVector[41]+steadyVector[42]).toString();
