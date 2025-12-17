@@ -85,9 +85,21 @@ finalMatrix = finalMatrix.T
 stochasticMatrix = stochasticMatrix.T
 doubleMatrix = doubleMatrix.T
 
+#print('[',end="")
+#for i in stochasticMatrix:
+#    print('[',end="")
+#    for j in i[:-1]:
+#        print(round(j,5),end=",")
+#    print(round(i[-1],5),end="")
+#    print(']',end=",")
+#print(']',end="")
+for i in range(41):
+    print("'a"+str(i+1)+"':" + "1",end=",")
 eigenvalues, eigenvectors = np.linalg.eig(stochasticMatrix)
 if __name__=="__main__":
-    print(eigenvectors[:,0])
+    #for i in eigenvectors[:,0].real:
+    #    print(round(i,5),end=",")
+    print(eigenvectors[:0])
     np.savetxt("finalMatrix.csv", finalMatrix, delimiter=",")
     np.savetxt("doubleMatrix.csv", doubleMatrix, delimiter=",")
     np.savetxt("stochasticMatrix.csv", stochasticMatrix, delimiter=",")
