@@ -1,5 +1,4 @@
 from flask import Flask, render_template, url_for
-from PIL import Image, ImageEnhance
 import matrix as m
 import numpy as np
 import os
