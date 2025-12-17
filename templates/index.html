@@ -3,135 +3,16 @@
         <title>Monopoly Sim</title>
         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style/style.css')}}"/>
         <script type="module" src="{{url_for('static', filename='js/opacity.js')}}"></script>
-        <style>
-            #a1 {
-                opacity: 1;
-            }
-            #a2 {
-                opacity: 1;
-            }
-            #a3 {
-                opacity: 1;
-            }
-            #a4 {
-                opacity: 1;
-            }
-            #a5 {
-                opacity: 1;
-            }
-            #a6 {
-                opacity: 1;
-            }
-            #a7 {
-                opacity: 1;
-            }
-            #a8 {
-                opacity: 1;
-            }
-            #a9 {
-                opacity: 1;
-            }
-            #a10 {
-                opacity: 1;
-            }
-            #a11 {
-                opacity: 1;
-            }
-            #a12 {
-                opacity: 1;
-            }
-            #a13 {
-                opacity: 1;
-            }
-            #a14 {
-                opacity: 1;
-            }
-            #a15 {
-                opacity: 1;
-            }
-            #a16 {
-                opacity: 1;
-            }
-            #a17 {
-                opacity: 1;
-            }
-            #a18 {
-                opacity: 1;
-            }
-            #a19 {
-                opacity: 1;
-            }
-            #a20 {
-                opacity: 1;
-            }
-            #a21 {
-                opacity: 1;
-            }
-            #a22 {
-                opacity: 1;
-            }
-            #a23 {
-                opacity: 1;
-            }
-            #a24 {
-                opacity: 1;
-            }
-            #a25 {
-                opacity: 1;
-            }
-            #a26 {
-                opacity: 1;
-            }
-            #a27 {
-                opacity: 1;
-            }
-            #a28 {
-                opacity: 1;
-            }
-            #a29 {
-                opacity: 1;
-            }
-            #a30 {
-                opacity: 1;
-            }
-            #a31 {
-                opacity: 1;
-            }
-            #a32 {
-                opacity: 1;
-            }
-            #a33 {
-                opacity: 1;
-            }
-            #a34 {
-                opacity: 1;
-            }
-            #a35 {
-                opacity: 1;
-            }
-            #a36 {
-                opacity: 1;
-            }
-            #a37 {
-                opacity: 1;
-            }
-            #a38 {
-                opacity: 1;
-            }
-            #a39 {
-                opacity: 1;
-            }
-            #a40 {
-                opacity: 1;
-            }
-            #a41 {
-                opacity: 1;
-            }
-        </style>
     </head>
     <body>
-        <div><button type="submit" id="ssButtonID">Click Me for the Steady State Probability</button></div>  
-        <div><input type="text" id="depthText" placeholder="1"><button type="submit" id="depthSubmit">Submit</button></div>
+        <div id="title"><h1>Monopoly Simulator</h1></div>
+        <div class="floating-div">
+            <h3>Information: </h3>
+            <div><p>The opacity of the red tile represents how probable it is to be landed on in a given scenario, the more transparent the red tile is the less probable the space is to be landed on. The steady state probability is the probability that a player is on that tile at infinite turns. Clicking on a tile will show the probability of where you will land after the amount of turns in the depth box below (defaults to 1). </p></div>
+            <div><button type="submit" id="ssButtonID" class="button-33">Steady State Probability</button></div>  
+            <div id="submission"><p>Enter Depth: </p><input type="text" id="depthText" placeholder="1"><button type="submit" id="depthSubmit">Submit</button></div>
+            <div><button type="submit" id="resetButtonID" class="button-33">Reset</button></div>
+        </div>
         <div class="containerBox">
             <img src="{{url_for('static', filename='board.jpg')}}" id="board" />
             <img src="{{url_for('static', filename='board-overlay.png')}}" id="overlay" />
