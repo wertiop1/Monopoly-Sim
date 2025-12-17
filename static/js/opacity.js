@@ -16,14 +16,24 @@ function updateBoard(id){
     }
     for(let i = 0; i < 41; i++){
         let image = document.getElementById(keys[i]);
-        image.style.opacity = opacities[keys[i]].toString();
+        if (i === 41) {
+            image.style.opacity = (steadyVector[41]+steadyVector[42]).toString();
+        }
+        else {
+            image.style.opacity = steadyVector[i].toString();
+        }
     }
 }
 
 function showSteadyState(){
     for(let i = 0; i < 41; i++){
         let image = document.getElementById(keys[i]);
-        image.style.opacity = steadyVector[i].toString();
+        if (i === 41) {
+            image.style.opacity = (steadyVector[41]+steadyVector[42]).toString();
+        }
+        else {
+            image.style.opacity = steadyVector[i].toString();
+        }
     }
 }
 
