@@ -3,6 +3,8 @@ const stochasticMatrix = [[0.01177,0.0081,0.00838,0.00482,0.005,0.00158,0.00504,
 const steadyVector = [0.18507,0.12407,0.11453,0.12699,0.13827,0.16617,0.13459,0.05897,0.1377,0.13657,0.26726,0.16006,0.1623,0.13522,0.15001,0.15415,0.16323,0.1396,0.17081,0.17146,0.17036,0.158,0.07322,0.15531,0.18161,0.16523,0.15421,0.15312,0.16117,0.14855,0.0,0.1522,0.15408,0.13547,0.1475,0.13849,0.05915,0.12545,0.13164,0.15294,0.2322,0.1935,0.16125]
 let opacities = {'a1':1,'a2':1,'a3':1,'a4':1,'a5':1,'a6':1,'a7':1,'a8':1,'a9':1,'a10':1,'a11':1,'a12':1,'a13':1,'a14':1,'a15':1,'a16':1,'a17':1,'a18':1,'a19':1,'a20':1,'a21':1,'a22':1,'a23':1,'a24':1,'a25':1,'a26':1,'a27':1,'a28':1,'a29':1,'a30':1,'a31':1,'a32':1,'a33':1,'a34':1,'a35':1,'a36':1,'a37':1,'a38':1,'a39':1,'a40':1,'a41':1}
 let maxElem = Math.max(...steadyVector);
+let currentMatrix = stochasticMatrix;
+
 for(let i = 0; i < 43; i++){
     steadyVector[i] = steadyVector[i]/maxElem;
 }
@@ -28,12 +30,26 @@ function showSteadyState(){
 }
 
 function getNormalizedColumn(colIndex) {
-    let column = stochasticMatrix.map(row => row[colIndex]);
+    let column = currentMatrix.map(row => row[colIndex]);
     let maxElem = Math.max(...column);
     for(let i = 0; i < 41; i++){
         column[i] = column[i]/maxElem;
     }
     return column;
+}
+
+function setDepth(){
+    let depthText = document.getElementById("depthText");
+    let depth = parseInt(depthText.value);
+    if(depth == NaN || depth > 20){
+        alert("Enter a valid number less than 20");
+    }
+    else{
+        currentMatrix = stochasticMatrix;
+        for(let i = 1; i < depth; i++){
+            currentMatrix = multiply(currentMatrix, stochasticMatrix);
+        }
+    }
 }
 
 for(let i = 0; i < 41; i++){
@@ -42,5 +58,9 @@ for(let i = 0; i < 41; i++){
         updateBoard(event.target.id);
     })
 }
+
 let steadyButton = document.getElementById("ssButtonID");
 steadyButton.addEventListener("click", showSteadyState);
+
+let depthButton = document.getElementById("depthSubmit");
+depthButton.addEventListener("click", setDepth);
