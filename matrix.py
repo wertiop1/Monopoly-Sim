@@ -93,5 +93,5 @@ if __name__=="__main__":
     np.savetxt("stochasticMatrix.csv", stochasticMatrix, delimiter=",")
     plt.imshow(eigenvectors[:,0].real.reshape(-1,1), interpolation="nearest")
     plt.colorbar(label="Value")
-    plt.title("Stochastic Matrix Heatmap")
-    plt.savefig("Stochastic_Matrix_Heatmap.png")
+    plt.title("Steady State Vector Heatmap")
+    plt.savefig("Steady_State_Vector_Heatmap.png")
