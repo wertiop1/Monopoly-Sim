@@ -17,10 +17,10 @@ function updateBoard(id){
     for(let i = 0; i < 41; i++){
         let image = document.getElementById(keys[i]);
         if (i === 41) {
-            image.style.opacity = (steadyVector[41]+steadyVector[42]).toString();
+            image.style.opacity = (opacities[keys[41]]+opacities[keys[42]]).toString();
         }
         else {
-            image.style.opacity = steadyVector[i].toString();
+            image.style.opacity = opacities[keys[i]].toString();
         }
     }
 }
